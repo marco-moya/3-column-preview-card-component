@@ -1,0 +1,137 @@
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+  --font-lexend-deca: 'Big Shoulders Display', sans-serif;
+  --font-big-shoulders-display: 'Lexend Deca', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--font-big-shoulders-display);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 40px;
+}
+
+.card-title {
+  font-size: 3.8rem;
+  font-family: var(--font-lexend-deca);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  margin: 25px 0;
+}
+
+.card-paragraph {
+  font-size: 1.5rem;
+  line-height: 24px;
+  color: var(--transparent-white);
+  padding-right: 20px;
+}
+
+.card-button{
+  padding: 15px 35px;
+  margin: 20px 0;
+  border-radius: 50px;
+  border: 3px solid white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: var(--font-big-shoulders-display);
+}
+
+.sedans {
+  background-color: var(--bright-orange);
+}
+
+.suvs {
+  background-color: var(--dark-cyan);
+}
+
+.luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.sedans .card-button {
+  color: var(--bright-orange);
+}
+
+.suvs .card-button {
+  color: var(--dark-cyan);
+}
+
+.luxury .card-button {
+  color: var(--very-dark-cyan);
+}
+
+@media (min-width: 1200px) {
+
+  body {
+    height: 100vh;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    max-width: 1000px;
+    height: 500px;
+  }
+
+  .card {
+    justify-content: start;
+    padding: 50px;
+  }
+
+  .card-button {
+    margin-bottom: 0;
+    margin-top: 95px;
+  }
+
+  .card-button:hover {
+    color: var(--transparent-white);
+    border: 3px solid white;
+    cursor: pointer;
+  }
+  .sedans .card-button:hover {
+    background-color: var(--bright-orange);
+  }
+
+  .suvs .card-button:hover {
+    background-color: var(--dark-cyan);
+  }
+
+  .luxury .card-button:hover {
+    background-color: var(--very-dark-cyan);
+  }
+
+}
